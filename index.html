@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AXON — Old GUI Edition</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Glowing circle (old GUI) -->
+  <div id="axon-glow" class="idle" title="AXON — tap to open">
+    <div id="glow-inner">🎙</div>
+  </div>
+
+  <!-- small control bar shown when opened -->
+  <div id="axon-panel" class="hidden" role="dialog" aria-live="polite">
+    <div class="top">
+      <div class="title">AXON</div>
+      <div class="modes">
+        <label><input type="checkbox" id="jarvis-mode"> Jarvis Mode</label>
+      </div>
+      <button id="close-btn" title="Close">✕</button>
+    </div>
+
+    <div id="log" class="log"></div>
+
+    <div class="controls">
+      <input id="axon-input" placeholder='Say "Axon" or type a command...'>
+      <button id="voice-btn">🎤</button>
+      <button id="send-btn">➤</button>
+    </div>
+
+    <div class="quick">
+      <button data-cmd="who is albert einstein">Who is Einstein</button>
+      <button data-cmd="where am i">Where am I</button>
+      <button data-cmd="weather">Weather</button>
+      <button data-cmd="rate usd pkr">USD→PKR</button>
+    </div>
+  </div>
+
+  <video id="cam-preview" class="hidden" autoplay playsinline></video>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+:root{
+  --accent:#0b72ff; --bg:#071022; --panel:#0f1720; --text:#e6f2ff;
+  --jarvis-accent: #ffd24d;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,Segoe UI,Roboto,Arial;background:linear-gradient(180deg,#071022,#021018);height:100vh;color:var(--text)}
+#axon-glow{position:fixed;right:20px;bottom:20px;width:88px;height:88px;border-radius:50%;background:radial-gradient(circle at 30% 30%, #2aa7ff, var(--accent));display:flex;align-items:center;justify-content:center;box-shadow:0 0 40px rgba(11,114,255,0.45);cursor:pointer;z-index:2147483647;transition:transform .18s ease,box-shadow .18s ease}
+#glow-inner{font-weight:700;color:#fff;font-size:28px}
+#axon-glow.listening{animation:glow-listen 1s infinite}
+#axon-glow.speaking{animation:glow-speak 0.7s infinite}
+@keyframes glow-listen{0%{transform:scale(1)}50%{transform:scale(1.06)}100%{transform:scale(1)}}
+@keyframes glow-speak{0%{box-shadow:0 0 40px rgba(11,114,255,0.25)}50%{box-shadow:0 0 80px rgba(255,200,50,0.6)}100%{box-shadow:0 0 40px rgba(11,114,255,0.25)}}
+
+/* panel */
+#axon-panel{position:fixed;right:120px;bottom:30px;width:360px;background:linear-gradient(180deg,#071022,#051426);border-radius:12px;padding:12px;color:var(--text);box-shadow:0 20px 60px rgba(0,0,0,0.6);z-index:2147483646}
+#axon-panel.hidden{display:none}
+.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.title{font-weight:800;font-size:18px}
+.modes{font-size:13px;color:rgba(255,255,255,0.8)}
+#close-btn{background:transparent;border:0;color:var(--text);font-size:18px;cursor:pointer}
+.log{height:180px;overflow:auto;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:8px;border-radius:8px;margin-bottom:8px;font-size:13px}
+.controls{display:flex;gap:8px}
+.controls input{flex:1;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);color:var(--text)}
+.controls button{padding:8px;border-radius:8px;border:0;background:var(--accent);color:#fff;cursor:pointer}
+.quick{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
+.quick button{flex:1;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text);cursor:pointer;font-size:13px}
+.hidden{display:none}
+video#cam-preview{position:fixed;left:12px;top:12px;max-width:38%;z-index:2147483645;border-radius:8px;box-shadow:0 8px 30px rgba(0,0,0,0.4)}
+/* Jarvis accent */
+.jarvis-mode #axon-glow{box-shadow:0 0 60px rgba(255,210,77,0.55);background:radial-gradient(circle at 30% 30%, #ffe18a, var(--jarvis-accent))}
